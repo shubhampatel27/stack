@@ -1,0 +1,47 @@
+#include <bits/stdc++.h> 
+// Stack class.
+class Stack {
+    public:
+    int *data;
+    int tops;
+    int capacity;
+public:
+    
+    Stack(int capacity) {
+        // Write your code here.
+        data = new int[capacity];
+        tops = -1;
+        this->capacity = capacity;
+    }
+
+    void push(int num) {
+        // Write your code here.
+        if(tops == capacity-1) return;
+        data[++tops]=num;
+    }
+
+    int pop() {
+        // Write your code here.
+           if(tops == -1) return -1;
+           int temp = data[tops];
+          tops--;
+           return temp;
+
+    }
+    
+    int top() {
+        if(tops == -1) return -1;
+        return data[tops];
+    }
+    
+    int isEmpty() {
+       return tops == -1;
+    }
+    
+    int isFull() {
+      if(tops == capacity-1) return 1;
+      else return 0;
+
+    }
+    
+};
